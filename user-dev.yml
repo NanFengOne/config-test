@@ -1,0 +1,12 @@
+eureka:
+  client:
+    service-url:
+      # 注册中心地址
+      defaultZone: http://eureka1:9091/eureka,http://eureka2:9092/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${server.port} # 管控台展示
+spring:
+  profiles: service1
+  application:
+    name: user-service
